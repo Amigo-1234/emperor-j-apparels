@@ -36,11 +36,7 @@ body{
     transition:.35s cubic-bezier(.22,.61,.36,1);
 }
 
-.header.scrolled{
-    background:rgba(248,244,237,.95);
-    backdrop-filter:blur(10px);
-    box-shadow:0 1px 10px rgba(0,0,0,.04);
-}
+
 
 /* NAVBAR */
 
@@ -70,7 +66,7 @@ body{
     border:none;
     background:none;
     cursor:pointer;
-    color:var(--dark);
+    color:white;
 }
 
 .menu-btn svg{
@@ -88,7 +84,7 @@ body{
     position:relative;
 
     text-decoration:none;
-    color:var(--dark);
+    color:white;
 
     font-size:.95rem;
     font-weight:300;
@@ -223,6 +219,14 @@ body{
 
 }
 
+.header.scrolled{
+    background:rgba(248,244,237,.95);
+    backdrop-filter:blur(10px);
+    box-shadow:0 1px 10px rgba(0,0,0,.04);
+
+    color:var(--dark);
+}
+
 .mobile-links a:hover{
 
     color:var(--gold);
@@ -312,4 +316,125 @@ body{
         color:white;
         transform:translateY(-2px);
     }
+}
+
+/* HERO */
+
+.hero{
+
+    position:relative;
+
+    min-height:100vh;
+
+    background:url("../images/hero.jpg");
+
+    background-size:cover;
+    background-position:center top;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    padding:0 24px;
+
+}
+
+.hero-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(0,0,0,.35);
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:700px;
+
+    color:white;
+
+}
+
+.hero-subtitle{
+
+    display:block;
+
+    margin-bottom:16px;
+
+    letter-spacing:3px;
+
+    font-size:.8rem;
+
+    text-transform:uppercase;
+
+}
+
+.hero h1{
+
+    font-size:3rem;
+
+    font-weight:300;
+
+    line-height:1.1;
+
+    margin-bottom:20px;
+
+}
+
+.hero p{
+
+    font-size:1rem;
+
+    line-height:1.8;
+
+    margin-bottom:32px;
+
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+}
+
+.hero-btn-primary{
+
+    padding:16px 24px;
+
+    border-radius:999px;
+
+    text-decoration:none;
+
+    background:var(--gold);
+
+    color:white;
+
+    font-weight:500;
+
+}
+
+.hero-btn-secondary{
+
+    padding:16px 24px;
+
+    border-radius:999px;
+
+    text-decoration:none;
+
+    border:1px solid white;
+
+    color:white;
+
 }
