@@ -1,0 +1,315 @@
+/* RESET */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --cream:#F8F4ED;
+    --gold:#C9A66B;
+    --dark:#1F1F1F;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Instrument Sans',sans-serif;
+    background:var(--cream);
+    color:var(--dark);
+}
+
+/* HEADER */
+
+.header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+
+    background:transparent;
+
+    transition:.35s cubic-bezier(.22,.61,.36,1);
+}
+
+.header.scrolled{
+    background:rgba(248,244,237,.95);
+    backdrop-filter:blur(10px);
+    box-shadow:0 1px 10px rgba(0,0,0,.04);
+}
+
+/* NAVBAR */
+
+.navbar{
+    max-width:1280px;
+    margin:auto;
+
+    height:80px;
+
+    padding:0 32px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+/* LOGO */
+
+.logo img{
+    height:60px;
+    display:block;
+}
+
+/* MOBILE MENU BUTTON */
+
+.menu-btn{
+    border:none;
+    background:none;
+    cursor:pointer;
+    color:var(--dark);
+}
+
+.menu-btn svg{
+    display:block;
+}
+
+/* DESKTOP NAVIGATION */
+
+.desktop-nav{
+    display:none;
+    list-style:none;
+}
+
+.desktop-nav a{
+    position:relative;
+
+    text-decoration:none;
+    color:var(--dark);
+
+    font-size:.95rem;
+    font-weight:300;
+
+    letter-spacing:.8px;
+
+    transition:.35s cubic-bezier(.22,.61,.36,1);
+}
+
+.desktop-nav a:hover{
+    transform:translateY(-2px);
+}
+
+.desktop-nav a::after{
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    bottom:-8px;
+
+    width:0;
+    height:1px;
+
+    background:var(--gold);
+
+    transform:translateX(-50%);
+
+    transition:.35s cubic-bezier(.22,.61,.36,1);
+}
+
+.desktop-nav a:hover::after{
+    width:100%;
+}
+
+/* DESKTOP BUTTON */
+
+.desktop-btn{
+    display:none;
+}
+
+/* MOBILE MENU */
+
+.mobile-menu{
+    position:fixed;
+
+    top:0;
+    right:-100%;
+
+    width:80%;
+    max-width:350px;
+
+    height:100vh;
+
+    background:var(--cream);
+
+    padding:25px;
+
+    transition:.35s ease;
+
+    z-index:2000;
+}
+
+.mobile-menu.active{
+    right:0;
+}
+
+.menu-top{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    margin-bottom:70px;
+}
+
+.menu-top img{
+    height:50px;
+}
+
+.close-btn{
+    border:none;
+    background:none;
+    cursor:pointer;
+}
+
+.close-btn{
+
+    width:48px;
+    height:48px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    transition:.3s ease;
+
+}
+
+.close-btn:hover{
+
+    background:rgba(0,0,0,.05);
+
+}
+
+.mobile-links{
+    list-style:none;
+}
+
+.mobile-links li{
+    margin-bottom:32px;
+}
+
+.mobile-links a{
+
+    position:relative;
+
+    display:inline-block;
+
+    text-decoration:none;
+
+    color:var(--dark);
+
+    font-size:1.5rem;
+
+    font-weight:300;
+
+    letter-spacing:.8px;
+
+    transition:.35s cubic-bezier(.22,.61,.36,1);
+
+}
+
+.mobile-links a:hover{
+
+    color:var(--gold);
+
+    transform:translateX(8px);
+
+}
+
+.consultation-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:16px 28px;
+
+    border:1px solid var(--gold);
+
+    border-radius:999px;
+
+    background:transparent;
+
+    color:var(--gold);
+
+    text-decoration:none;
+
+    font-weight:500;
+
+    transition:.35s cubic-bezier(.22,.61,.36,1);
+
+}
+
+.consultation-btn:hover{
+
+    background:var(--gold);
+
+    color:white;
+
+}
+
+.mobile-menu{
+
+    box-shadow:
+    -20px 0 40px rgba(0,0,0,.08);
+
+}
+
+/* DESKTOP */
+
+@media (min-width:992px){
+
+    .menu-btn{
+        display:none;
+    }
+
+    .desktop-nav{
+        display:flex;
+        align-items:center;
+        gap:2.5rem;
+    }
+
+    .desktop-btn{
+        display:inline-flex;
+
+        align-items:center;
+        justify-content:center;
+
+        padding:.9rem 1.4rem;
+
+        border:1px solid var(--gold);
+        border-radius:999px;
+
+        background:transparent;
+
+        color:var(--gold);
+        text-decoration:none;
+
+        font-size:.9rem;
+        font-weight:400;
+
+        transition:.35s cubic-bezier(.22,.61,.36,1);
+    }
+
+    .desktop-btn:hover{
+        background:var(--gold);
+        color:white;
+        transform:translateY(-2px);
+    }
+}
