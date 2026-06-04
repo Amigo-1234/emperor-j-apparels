@@ -882,6 +882,9 @@ body{
 
     transform:translateY(-8px);
 
+    box-shadow:
+    0 20px 40px rgba(0,0,0,.08);
+
 }
 
 .service-number{
@@ -922,7 +925,9 @@ body{
 
 .service-card:hover .service-number{
 
+    color:var(--gold);
+
     text-shadow:
-    0 0 20px rgba(201,166,107,.5);
+    0 0 20px rgba(201,166,107,.35);
 
 }
