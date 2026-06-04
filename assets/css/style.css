@@ -341,6 +341,16 @@ body{
 
 }
 
+@media (min-width:992px){
+
+    .hero{
+
+        background-position:center 20%;
+
+    }
+
+}
+
 .hero-overlay{
 
     position:absolute;
@@ -545,10 +555,9 @@ body{
 
     opacity:0;
 
-    transform:translateY(40px);
-
     animation:heroReveal 1s ease forwards;
 
+    transform:translateY(-40px);
 }
 
 @keyframes heroReveal{
