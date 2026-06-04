@@ -694,7 +694,7 @@ body{
 
 .stat h3{
 
-    font-size:2rem;
+    font-size:2.5rem;
 
     color:var(--gold);
 
@@ -744,5 +744,71 @@ body{
         align-items:center;
 
     }
+
+}
+
+
+.about-image{
+
+    overflow:hidden;
+
+    border-radius:24px;
+
+}
+
+.about-image img{
+
+    transition:.7s ease;
+
+}
+
+.about-image:hover img{
+
+    transform:scale(1.05);
+
+}
+
+.section-tag::after{
+
+    content:"";
+
+    display:block;
+
+    width:60px;
+
+    height:2px;
+
+    margin-top:12px;
+
+    background:var(--gold);
+
+}
+
+.reveal-left,
+.reveal-right{
+
+    opacity:0;
+
+    transition:1s ease;
+
+}
+
+.reveal-left{
+
+    transform:translateX(-60px);
+
+}
+
+.reveal-right{
+
+    transform:translateX(60px);
+
+}
+
+.reveal-active{
+
+    opacity:1;
+
+    transform:translateX(0);
 
 }

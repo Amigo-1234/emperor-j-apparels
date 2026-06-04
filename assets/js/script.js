@@ -61,3 +61,84 @@ setInterval(() => {
     }, 400);
 
 }, 3000);
+
+const reveals = document.querySelectorAll(
+    ".reveal-left, .reveal-right"
+);
+
+window.addEventListener("scroll", () => {
+
+    reveals.forEach(item => {
+
+        const top = item.getBoundingClientRect().top;
+
+        if(top < window.innerHeight - 100){
+
+            item.classList.add("reveal-active");
+
+        }
+
+    });
+
+});
+
+const counters = document.querySelectorAll(".counter");
+
+let counted = false;
+
+window.addEventListener("scroll", () => {
+
+    const statsSection = document.querySelector(".about-stats");
+
+    const sectionTop =
+        statsSection.getBoundingClientRect().top;
+
+    if(sectionTop < window.innerHeight - 100 && !counted){
+
+        counted = true;
+
+        counters.forEach(counter => {
+
+            const target =
+                +counter.getAttribute("data-target");
+
+            let count = 0;
+
+            const speed = target / 60;
+
+            const updateCounter = () => {
+
+                count += speed;
+
+                if(count < target){
+
+                    counter.textContent =
+                        Math.ceil(count);
+
+                    requestAnimationFrame(updateCounter);
+
+                }else{
+
+                    if(target === 100){
+
+                        counter.textContent =
+                            target + "%";
+
+                    }else{
+
+                        counter.textContent =
+                            target + "+";
+
+                    }
+
+                }
+
+            };
+
+            updateCounter();
+
+        });
+
+    }
+
+});
