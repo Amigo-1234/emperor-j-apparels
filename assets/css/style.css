@@ -931,3 +931,36 @@ body{
     0 0 20px rgba(201,166,107,.35);
 
 }
+
+.service-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.service-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:0;
+
+    height:3px;
+
+    background:var(--gold);
+
+    transition:.4s ease;
+
+}
+
+.service-card:hover::before{
+
+    width:100%;
+
+}
