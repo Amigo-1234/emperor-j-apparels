@@ -202,3 +202,25 @@ new IntersectionObserver((entries)=>{
 galleryObserver.observe(
 document.querySelector(".gallery-preview")
 );
+
+const testimonials = document.querySelectorAll('.testimonial');
+
+const testimonialObserver = new IntersectionObserver(entries => {
+
+    entries.forEach(entry => {
+
+        if(entry.isIntersecting){
+
+            entry.target.classList.add('show');
+
+        }
+
+    });
+
+});
+
+testimonials.forEach(item => {
+
+    testimonialObserver.observe(item);
+
+});
