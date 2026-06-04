@@ -24,3 +24,40 @@ window.addEventListener("scroll", () => {
     }
 
 });
+
+
+const changingWord = document.getElementById("changing-word");
+
+const words = [
+    "Confidence.",
+    "Elegance.",
+    "Distinction.",
+    "Greatness.",
+    "Every Occasion."
+];
+
+let currentWord = 0;
+
+setInterval(() => {
+
+    changingWord.style.opacity = "0";
+
+    changingWord.style.transform = "translateY(15px)";
+
+    setTimeout(() => {
+
+        currentWord++;
+
+        if(currentWord >= words.length){
+            currentWord = 0;
+        }
+
+        changingWord.textContent = words[currentWord];
+
+        changingWord.style.opacity = "1";
+
+        changingWord.style.transform = "translateY(0)";
+
+    }, 400);
+
+}, 3000);
