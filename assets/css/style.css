@@ -357,7 +357,10 @@ body{
 
     inset:0;
 
-    background:rgba(0,0,0,.35);
+    background:linear-gradient(
+        rgba(0,0,0,.55),
+        rgba(0,0,0,.45)
+    );
 
 }
 
@@ -486,6 +489,8 @@ body{
 
     margin-bottom:32px;
 
+    max-width: 550px;
+
 }
 
 .hero-buttons{
@@ -540,6 +545,23 @@ body{
     border:1px solid white;
 
     color:white;
+
+    transition:.35s cubic-bezier(.22,.61,.36,1);
+
+}
+
+.hero-btn-secondary:hover{
+
+    background:var(--gold);
+
+    border-color:var(--gold);
+
+    color:white;
+
+    transform:translateY(-2px);
+
+    box-shadow:
+    0 10px 25px rgba(201,166,107,.35);
 
 }
 
