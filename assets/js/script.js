@@ -142,3 +142,33 @@ window.addEventListener("scroll", () => {
     }
 
 });
+
+const serviceCards =
+document.querySelectorAll(".service-card");
+
+const serviceObserver =
+new IntersectionObserver((entries)=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            serviceCards.forEach((card,index)=>{
+
+                setTimeout(()=>{
+
+                    card.classList.add("show");
+
+                },index * 200);
+
+            });
+
+        }
+
+    });
+
+});
+
+serviceObserver.observe(
+document.querySelector(".services")
+);
