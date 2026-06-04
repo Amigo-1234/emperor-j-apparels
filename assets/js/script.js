@@ -172,3 +172,33 @@ new IntersectionObserver((entries)=>{
 serviceObserver.observe(
 document.querySelector(".services")
 );
+
+const galleryItems =
+document.querySelectorAll(".gallery-item");
+
+const galleryObserver =
+new IntersectionObserver((entries)=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            galleryItems.forEach((item,index)=>{
+
+                setTimeout(()=>{
+
+                    item.classList.add("show");
+
+                },index * 150);
+
+            });
+
+        }
+
+    });
+
+});
+
+galleryObserver.observe(
+document.querySelector(".gallery-preview")
+);
